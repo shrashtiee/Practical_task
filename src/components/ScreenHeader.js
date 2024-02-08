@@ -2,8 +2,6 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  TouchableOpacity,
-  Text
 } from 'react-native';
 import { connect } from 'react-redux';
 import Colors from '../utility/colorConstant';
@@ -12,9 +10,14 @@ import { VectorIcon } from './index';
 const ScreenHeader = () => {
   return (
     <View style={Styles.headerViewStyle}>
-      <View>
-        <Text style = {Styles.textStyle}>Home Screen</Text>
-      </View>
+      <View style = {Styles.viewStyle}>
+        </View>
+        <View style ={Styles.width30}>
+        <VectorIcon iconName='filter' iconSize={20} color={Colors.WHITE_COLOR} iconType={'FontAweSome5'} style ={{paddingHorizontal:10}}/>
+        <VectorIcon iconName='search' iconSize={25} color={Colors.WHITE_COLOR} />
+
+        </View>
+     
     </View>
   );
 };
@@ -26,10 +29,22 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.WHITE_COLOR,
     paddingHorizontal: 5,
-    justifyContent:'center'
+    justifyContent:'center',
+    backgroundColor: Colors.BLACK_COLOR,
+    flexDirection:'row'
+  },
+  viewStyle:{
+    width: '70%',
+    alignItems:'center',
+  },
+  width30:{
+    width: '30%',
+    flexDirection:'row',
+    justifyContent:'flex-end',
+    paddingHorizontal:30,
   },
   textStyle: {
-    color: Colors.BLACK_COLOR,
+        color: Colors.WHITE_COLOR,
         fontSize: 20,
         fontWeight: 'bold',
         textAlign:'center'
